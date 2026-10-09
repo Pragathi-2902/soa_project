@@ -1,0 +1,21 @@
+PS003 REVIEW-1 CHECKLIST
+
+[ ] Import all 6 Maven projects
+[ ] Java 17 configured
+[ ] Run Eureka on 8761
+[ ] Confirm Eureka dashboard opens
+[ ] Run User, Movie, Show, Booking and Gateway
+[ ] Confirm all services appear in Eureka
+[ ] Register using POST /auth/register
+[ ] Login using POST /auth/login
+[ ] Copy JWT token
+[ ] Call GET /movies with Bearer token
+[ ] Call GET /shows with Bearer token
+[ ] Call POST /bookings with Bearer token
+[ ] Call GET /movies without token and show 401
+[ ] Explain API Gateway and Eureka architecture
+[ ] Explain JWT authentication flow
+
+DEMO CREDENTIALS
+Username: neha
+Password: 1234

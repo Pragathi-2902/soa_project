@@ -1,0 +1,42 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://TICKET-USER-SERVICE
+          predicates:
+            - Path=/auth/**
+
+        - id: movie-service
+          uri: lb://TICKET-MOVIE-SERVICE
+          predicates:
+            - Path=/movies/**
+
+        - id: show-service
+          uri: lb://TICKET-SHOW-SERVICE
+          predicates:
+            - Path=/shows/**
+
+        - id: booking-service
+          uri: lb://TICKET-BOOKING-SERVICE
+          predicates:
+            - Path=/bookings/**
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: PS003-Review1-JWT-Secret-Key-For-Demo-2026-ChangeThisLater-1234567890
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
